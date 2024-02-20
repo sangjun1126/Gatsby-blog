@@ -1,16 +1,20 @@
 import React, {FunctionComponent} from "react";
 import styled from "@emotion/styled";
-import PostItem from "./PostItem";
+import PostItem from "components/Main/PostItem";
 
-const POST_ITEM_DATA = {
-    title: 'Post Item Title',
-    date: '2020.01.29.',
-    categories: ['Web', 'Frontend', 'Testing'],
-    summary:
-      '타입스크립트 재능있어 너 그렇게만 해!',
-      thumbnail: 'https://image.xportsnews.com/contents/images/upload/article/2023/0202/1675304924156096.jpg',
-    link: '<https://www.google.co.kr/>',
-  }
+export type PostType = {
+    node : {
+        frontmatter : {
+            id : string
+            summary : string
+            date : string
+            categories : string[]
+            thumbnail : {
+                publicURL : string
+            }
+        }
+    }
+}
 
 const PostListWrapper = styled.div`
     display : grid;
@@ -21,21 +25,14 @@ const PostListWrapper = styled.div`
     padding : 50px 0 100px;
 
     @media (max-width : 768px) {
-        grid-template-columns : lfr;
+        grid-template-columns : 1fr;
         width : 100%;
         padding : 50px 20px;
     }
 `
 
-const PostList : FunctionComponent = function() {
-    return (
-        <PostListWrapper>
-            <PostItem {...POST_ITEM_DATA} />
-            <PostItem {...POST_ITEM_DATA} />
-            <PostItem {...POST_ITEM_DATA} />
-            <PostItem {...POST_ITEM_DATA} />
-        </PostListWrapper>
-    )
-} 
+const PostList : FunctionComponent = function () {
+    return <PostListWrapper></PostListWrapper>
+}
 
 export default PostList;
