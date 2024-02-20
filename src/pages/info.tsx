@@ -1,7 +1,5 @@
 import React, {FunctionComponent} from "react";
 import { graphql } from "gatsby";
-import Text from "components/Text";
-import {Link} from 'gatsby';
 
 type InfoPageProps = {
     data : {
@@ -15,7 +13,7 @@ type InfoPageProps = {
     }
 }
 
-const InfoPage : FunctionComponent<InfoPageProps> = function ({
+const InfoPage : FunctionComponent<InfoPageProps> = function({
     data : {
         site : {
             siteMetadata : {title, description, author},
@@ -24,24 +22,21 @@ const InfoPage : FunctionComponent<InfoPageProps> = function ({
 }) {
     return (
         <div>
-            <Text text = {title} />
-            <Text text = {description} />
-            <Text text = {author} />
-            <a href="/">To Main</a>
+            {title} {description} {author}
         </div>
     )
 }
 
-export default InfoPage
+export default InfoPage;
 
 export const metadataQuery = graphql`
-    {
-        site {
-            siteMetadata {
-                title
-                description
-                author
-            }
+ {
+    site {
+        siteMetadata {
+            title
+            description
+            author
         }
     }
+ }
 `
