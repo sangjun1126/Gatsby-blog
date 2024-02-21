@@ -12,6 +12,13 @@ module.exports = {
         allExtensions: true,
       },
     },
+    {
+      resolve : `gatsby-source-filesystem`,
+      options : {
+        name : `images`,
+        path : `${__dirname}/static`,
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
