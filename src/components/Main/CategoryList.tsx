@@ -24,6 +24,12 @@ const CategoryListWrapper = styled.div`
     flex-wrap: wrap;
     width: 768px;
     margin: 100px auto 0;
+
+    @media (max-width : 768px) {
+        width : 100%;
+        margin-top : 50px;
+        padding : 0 20px;
+    }
 `;
 
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
@@ -37,6 +43,10 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 
     &:last-of-type {
         margin-right: 0;
+    }
+
+    @media (max-width : 768px) {
+        font-size : 15px;
     }
 `;
 
