@@ -84,3 +84,5 @@ export const getPostList = graphql`
     }
   }
 `
+
+// 메인 페이지

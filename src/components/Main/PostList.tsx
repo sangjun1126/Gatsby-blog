@@ -1,6 +1,7 @@
 import React, {FunctionComponent} from "react";
 import styled from "@emotion/styled";
 import PostItem from "components/Main/PostItem";
+import {PostListItemType} from 'types/PostItem.types';
 
 export type PostType = {
     node : {
@@ -11,10 +12,10 @@ export type PostType = {
             categories : string[]
             thumbnail : {
                 publicURL : string
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};
 
 const PostListWrapper = styled.div`
     display : grid;
@@ -32,7 +33,7 @@ const PostListWrapper = styled.div`
 `
 
 type PostListProps = {
-    posts : PostType[]
+    posts : PostListItemType[]
 }
 
 const PostList : FunctionComponent<PostListProps> = function ({posts}) {
