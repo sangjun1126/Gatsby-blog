@@ -103,6 +103,9 @@ export const getPostList = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
@@ -110,16 +113,16 @@ export const getPostList = graphql`
             categories
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width : 768, height : 400)
+                gatsbyImageData(width: 768, height: 400)
               }
             }
           }
         }
       }
     }
-    file (name : {eq : "profile-image"}) {
+    file(name: { eq: "profile-image" }) {
       childImageSharp {
-        gatsbyImageData(width : 120, height : 120)
+        gatsbyImageData(width: 120, height: 120)
       }
     }
   }
