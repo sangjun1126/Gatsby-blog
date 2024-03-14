@@ -17,7 +17,6 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
   });
 };
 
-// Generate a Slug Each Post Data
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -31,7 +30,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  // Get All Markdown File For Paging
   const queryAllMarkdownData = await graphql(
     `
       {
@@ -53,7 +51,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `,
   );
 
-  // Handling GraphQL Query Error
   if (queryAllMarkdownData.errors) {
     reporter.panicOnBuild(`Error while running query`);
     return;
